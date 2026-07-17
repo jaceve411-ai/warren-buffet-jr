@@ -1,0 +1,319 @@
+{
+  "audit": {
+    "formula_versions": "2.0.0",
+    "output_hashes": {
+      "business": "b3bb405ca7440b50873c514738297933ae5c768924094089f2b5e3d48ec73079",
+      "financial": "88a59e848bd01c97037af2a52337de0a219fb00fd286ce706259817781307327",
+      "market": "e50929a0059dad32e9c40cc7eca194081025aa35a9f4eabedb32fbee4d56d3f7",
+      "risk": "183a1cc586202cc669f6234446d6d990f85afdf4f1201bd164895b5f88f7a4a0",
+      "technical": "15a165a6bb0cf2b80f3abb8e7c6de53cde24650ee348594d1b4984713cdacd3d",
+      "valuation": "5c0ff994f198356732bf0aa225e894a550c711a86439bf69c49b5d84fb9b6727"
+    },
+    "packet_hash": "996489c9991833866db3b5fa7046043932b4c3152587d5e412f8fc267314b17f",
+    "validation_summary": {
+      "business": {
+        "failed": 0,
+        "passed": 0,
+        "warnings": 0
+      },
+      "financial": {
+        "failed": 0,
+        "passed": 6,
+        "warnings": 1
+      },
+      "market": {
+        "failed": 0,
+        "passed": 0,
+        "warnings": 0
+      },
+      "risk": {
+        "failed": 0,
+        "passed": 0,
+        "warnings": 0
+      },
+      "technical": {
+        "failed": 0,
+        "passed": 0,
+        "warnings": 0
+      },
+      "valuation": {
+        "failed": 0,
+        "passed": 0,
+        "warnings": 0
+      }
+    }
+  },
+  "category_scorecard": [
+    {
+      "awarded_points": 8.600000000000001,
+      "category": "business",
+      "confidence": 52.5,
+      "coverage": 0.375,
+      "max_points": 20.0,
+      "score_10": 4.300000000000001
+    },
+    {
+      "awarded_points": 9.675,
+      "category": "financial",
+      "confidence": 48.0,
+      "coverage": 0.2222222222222222,
+      "max_points": 15.0,
+      "score_10": 6.45
+    },
+    {
+      "awarded_points": 3.5999999999999996,
+      "category": "market",
+      "confidence": 35.0,
+      "coverage": 0.2,
+      "max_points": 20.0,
+      "score_10": 1.8
+    },
+    {
+      "awarded_points": 5.1,
+      "category": "technical",
+      "confidence": 41.7,
+      "coverage": 0.3333333333333333,
+      "max_points": 20.0,
+      "score_10": 2.55
+    },
+    {
+      "awarded_points": 1.6,
+      "category": "risk",
+      "confidence": 33.3,
+      "coverage": 0.16666666666666666,
+      "max_points": 15.0,
+      "score_10": 1.0666666666666667
+    },
+    {
+      "awarded_points": 1.8,
+      "category": "valuation",
+      "confidence": 50.0,
+      "coverage": 0.6,
+      "max_points": 10.0,
+      "score_10": 1.8
+    }
+  ],
+  "contradictions": [],
+  "executive_thesis": [
+    "NVDA scores 30.4/100 raw, landing in the 'Avoid' band.",
+    "Research classification is 'Avoid/Wait'.",
+    "Business 8.6/20 and financial 9.7/15 anchor the fundamental view.",
+    "Market 3.6/20 and technical 5.1/20 frame the growth and tape.",
+    "Risk 1.6/15 (higher is safer) and valuation 1.8/10 bound the downside and price.",
+    "Aggregate confidence is 43/100; 5 data points are missing or conflicted.",
+    "Per-share reference values are shown by scenario, never as a single number."
+  ],
+  "important_levels": [
+    {
+      "confluence": false,
+      "distance_atr": null,
+      "distance_percent": -63.563421315498324,
+      "kind": "scenario_bull",
+      "price": 43.906077314824515,
+      "source": "intrinsic"
+    },
+    {
+      "confluence": false,
+      "distance_atr": null,
+      "distance_percent": -74.00387850552393,
+      "kind": "scenario_base",
+      "price": 31.32532640084368,
+      "source": "intrinsic"
+    },
+    {
+      "confluence": false,
+      "distance_atr": null,
+      "distance_percent": -82.32711904792336,
+      "kind": "scenario_bear",
+      "price": 21.295821547252352,
+      "source": "intrinsic"
+    }
+  ],
+  "insider_activity": [
+    {
+      "acceptedDate": "2026-06-10 18:02:00",
+      "filingDate": "2026-06-10",
+      "formType": "4",
+      "link": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000123/xslF345X03/wf-form4.xml",
+      "price": 118.45,
+      "reportingName": "Huang Jen-Hsun",
+      "securitiesOwned": 860000000,
+      "securitiesTransacted": 120000,
+      "significant": true,
+      "symbol": "NVDA",
+      "total_usd": 14214000.0,
+      "transactionDate": "2026-06-08",
+      "transactionType": "S-Sale"
+    },
+    {
+      "acceptedDate": "2026-05-02 17:40:00",
+      "filingDate": "2026-05-02",
+      "formType": "4",
+      "link": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000098/xslF345X03/wf-form4.xml",
+      "price": 112.3,
+      "reportingName": "Kress Colette",
+      "securitiesOwned": 210000,
+      "securitiesTransacted": 45000,
+      "significant": true,
+      "symbol": "NVDA",
+      "total_usd": 5053500.0,
+      "transactionDate": "2026-04-30",
+      "transactionType": "S-Sale"
+    }
+  ],
+  "institutional_holders": [
+    {
+      "change": 12500000,
+      "dateReported": "2026-03-31",
+      "holder": "Vanguard Group Inc",
+      "shares": 1580000000,
+      "symbol": "NVDA"
+    },
+    {
+      "change": -3200000,
+      "dateReported": "2026-03-31",
+      "holder": "BlackRock Inc",
+      "shares": 1340000000,
+      "symbol": "NVDA"
+    }
+  ],
+  "knowledge_timestamp": "2026-07-16T21:00:00+00:00",
+  "missing_or_conflicted_data": [
+    "business_analysis:BUS-ROIC-spread: NOT_SCORABLE",
+    "market_analysis:MKT-REV-breadth: NOT_SCORABLE",
+    "technical_momentum:TECH-rs-percentile: NOT_SCORABLE",
+    "risk_analysis:RSK-beta: NOT_SCORABLE",
+    "valuation_analysis:VAL-PEG-028: NOT_SCORABLE"
+  ],
+  "monitoring_triggers": [
+    "Classify the moat (none/narrow/wide) with \u22652 quantitative effects.",
+    "Assign the TAM evidence tier (1-5).",
+    "For each catalyst give P, Impact, EvidenceQuality and months_to_event.",
+    "Assess base/breakout quality."
+  ],
+  "overrides": [
+    {
+      "action": "CAP_SPECULATIVE",
+      "condition": "risk <=4/15",
+      "note": "Risk score in the fragile band.",
+      "override_id": "OVR-4"
+    },
+    {
+      "action": "WAIT_AVOID",
+      "condition": "valuation<=4 and technical<=8",
+      "note": "Expensive and technically weak.",
+      "override_id": "OVR-5"
+    },
+    {
+      "action": "GATE_INELIGIBLE",
+      "condition": "business coverage<0.70",
+      "note": "business coverage 0.38.",
+      "override_id": "OVR-6"
+    },
+    {
+      "action": "GATE_INELIGIBLE",
+      "condition": "financial coverage<0.70",
+      "note": "financial coverage 0.22.",
+      "override_id": "OVR-6"
+    },
+    {
+      "action": "GATE_INELIGIBLE",
+      "condition": "market coverage<0.70",
+      "note": "market coverage 0.20.",
+      "override_id": "OVR-6"
+    },
+    {
+      "action": "GATE_INELIGIBLE",
+      "condition": "technical coverage<0.70",
+      "note": "technical coverage 0.33.",
+      "override_id": "OVR-6"
+    },
+    {
+      "action": "GATE_INELIGIBLE",
+      "condition": "risk coverage<0.70",
+      "note": "risk coverage 0.17.",
+      "override_id": "OVR-6"
+    },
+    {
+      "action": "GATE_INELIGIBLE",
+      "condition": "valuation coverage<0.70",
+      "note": "valuation coverage 0.60.",
+      "override_id": "OVR-6"
+    }
+  ],
+  "per_share_suppressed": false,
+  "profile": {
+    "band": "Avoid",
+    "gate_evaluations": {
+      "momentum": {
+        "failing": [
+          "raw_total<78",
+          "technical<17",
+          "market<16",
+          "business+financial<28",
+          "risk<8",
+          "technical_confidence<70"
+        ],
+        "passed": false
+      },
+      "quality": {
+        "failing": [
+          "raw_total<80",
+          "business<16",
+          "financial<11",
+          "risk<10",
+          "valuation<5",
+          "technical<12"
+        ],
+        "passed": false
+      },
+      "value": {
+        "failing": [
+          "raw_total<75",
+          "valuation<8",
+          "business<13",
+          "risk<10",
+          "technical<9"
+        ],
+        "passed": false
+      }
+    },
+    "profile": "Avoid/Wait",
+    "raw_score": 30.375000000000004,
+    "reasons": [
+      "override or raw<50 forces Avoid/Wait"
+    ]
+  },
+  "report_version": "2.0.0",
+  "reverse_dcf": {
+    "implied_growth": 0.4470670913349549,
+    "state": "OK"
+  },
+  "revisit_date_or_event": "Next quarterly earnings release or a confirmed technical breakout.",
+  "security": {
+    "currency": "USD",
+    "exchange": "NASDAQ",
+    "ticker": "NVDA"
+  },
+  "thesis_killers": [
+    "List the three most credible thesis killers for this business.",
+    "List \u22653 risk thesis-killers with early-warning metrics."
+  ],
+  "valuation_scenarios": [
+    {
+      "name": "bear",
+      "probability": 0.25,
+      "value": 21.295821547252352
+    },
+    {
+      "name": "base",
+      "probability": 0.5,
+      "value": 31.32532640084368
+    },
+    {
+      "name": "bull",
+      "probability": 0.25,
+      "value": 43.906077314824515
+    }
+  ]
+}

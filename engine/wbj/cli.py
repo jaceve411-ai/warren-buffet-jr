@@ -333,17 +333,54 @@ def screen(limit: int = 15) -> None:
 
 
 @app.command()
-def aggregate(ticker: str) -> None:
-    """Aggregate specialist outputs for a ticker."""
-    typer.echo(f"aggregate {ticker}: not implemented")
-    raise typer.Exit(1)
+def full(
+    ticker: str,
+    offline: bool = typer.Option(False, "--offline", help="Use the cached/golden packet (no network)."),
+    overlay: str = typer.Option(None, "--overlay", help="Path to a judgments JSON to merge."),
+) -> None:
+    """Run the full v2.0.0 staged pipeline (6 specialists -> gates -> report)."""
+    from wbj.pipeline import run_all
+
+    settings = load_settings()
+    overlay_path = Path(overlay) if overlay else None
+    final = run_all(ticker, settings, overlay_path=overlay_path, offline=offline)
+    out = settings.reports_dir / ticker.upper() / date.today().isoformat()
+    typer.echo(f"\n=== {final.security.get('ticker')} — {final.profile.profile} "
+               f"(raw {final.profile.raw_score:.1f}/100, band {final.profile.band}) ===")
+    for r in final.category_scorecard:
+        typer.echo(f"  {r.category:<12} {r.awarded_points:5.1f}/{r.max_points:<4.0f} "
+                   f"score {r.score_10:.1f}/10  cov {r.coverage:.0%}")
+    typer.echo(f"\nSaved report + charts under {out}")
 
 
 @app.command()
-def report(ticker: str) -> None:
-    """Generate report for a ticker."""
-    typer.echo(f"report {ticker}: not implemented")
-    raise typer.Exit(1)
+def aggregate(
+    ticker: str,
+    offline: bool = typer.Option(True, "--offline/--live"),
+    overlay: str = typer.Option(None, "--overlay"),
+) -> None:
+    """Aggregate specialist outputs into a FinalReport for a ticker."""
+    from wbj.pipeline import stage_aggregate, stage_compute, stage_packet
+
+    settings = load_settings()
+    packet = stage_packet(ticker, settings, offline=offline)
+    outputs = stage_compute(packet)
+    final = stage_aggregate(outputs, packet, Path(overlay) if overlay else None)
+    typer.echo(json.dumps(final.model_dump(mode="json"), indent=2, sort_keys=True))
+
+
+@app.command()
+def report(
+    ticker: str,
+    offline: bool = typer.Option(True, "--offline/--live"),
+) -> None:
+    """Generate the full report (md + json + charts) for a ticker."""
+    from wbj.pipeline import run_all
+
+    settings = load_settings()
+    run_all(ticker, settings, offline=offline)
+    out = settings.reports_dir / ticker.upper() / date.today().isoformat()
+    typer.echo(f"report -> {out}/report.md")
 
 
 if __name__ == "__main__":
