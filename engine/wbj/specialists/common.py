@@ -65,6 +65,7 @@ class JudgmentRequest(BaseModel):
     metric_id: str
     question: str
     schema_hint: str = ""
+    target_dimension: str | None = None
 
 
 class SpecialistOutput(BaseModel):
@@ -86,6 +87,18 @@ class SpecialistOutput(BaseModel):
     validation_tests: dict = Field(
         default_factory=lambda: {"passed": 0, "failed": 0, "warnings": 0}
     )
+    output_hash: str = ""
+
+
+def compute_output_hash(output: "SpecialistOutput") -> str:
+    """Deterministic sha256 over an output's content, excluding the hash itself."""
+    import hashlib
+    import json
+
+    payload = output.model_dump(mode="json")
+    payload.pop("output_hash", None)
+    encoded = json.dumps(payload, sort_keys=True, default=str).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
 
 
 # --- band classification -----------------------------------------------------

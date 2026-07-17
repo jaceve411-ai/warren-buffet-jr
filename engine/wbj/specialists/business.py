@@ -155,6 +155,7 @@ def run(packet: Packet, overlay: dict | None = None) -> BusinessOutput:
                 metric_id="BUS-moat-class",
                 question="Classify the moat (none/narrow/wide) with ≥2 quantitative effects.",
                 schema_hint="{class: none|narrow|wide, effects: [str]}",
+                target_dimension="moat",
             ),
             JudgmentRequest(
                 request_id="BUS-thesis-killers",
