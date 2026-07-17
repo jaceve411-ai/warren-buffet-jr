@@ -74,7 +74,26 @@ Desde esta carpeta, abre Claude Code y pide un análisis:
 Analiza NVDA
 ```
 
-El orquestador armará el packet de datos, correrá los 6 especialistas en paralelo, aplicará gates y overrides, y entregará el reporte final con niveles de confirmación/invalidación y trail de auditoría. *(El motor Python completo — indicadores técnicos, DCF institucional, los 6 especialistas — está en construcción: ver `RESUME.md`.)*
+El orquestador armará el packet de datos, correrá los 6 especialistas en paralelo, aplicará gates y overrides, y entregará el reporte final con niveles de confirmación/invalidación y trail de auditoría.
+
+## Engine (motor Python v2.0.0)
+
+El motor completo vive en `engine/` e implementa la metodología end-to-end:
+providers de datos, motores de indicadores técnicos / niveles importantes /
+valuación institucional (DCF, WACC, reverse DCF, Monte Carlo), los 6
+especialistas, el overlay de juicio, la agregación con gates y el render del
+reporte. Corre offline con un packet golden y trae ~350 tests.
+
+```bash
+cd engine
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]"
+pytest -q
+wbj full NVDA --offline     # pipeline completo sin red -> Reportes/NVDA/<fecha>/
+```
+
+Detalle de instalación, claves, etapas y flujo de overlay en
+[`engine/README.md`](engine/README.md).
 
 ## Perfil del inversionista (resumen)
 

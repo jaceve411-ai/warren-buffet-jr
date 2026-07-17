@@ -1,5 +1,13 @@
 # Resume Point — wbj Compute Engine Build
 
+**Status:** ✅ **COMPLETE — 25 / 25 tasks.** All engine tasks (packet builder,
+indicators, levels, valuation, the six specialists, judgment overlay,
+aggregation/gates, charts, renderer, CLI pipeline, offline golden e2e, docs)
+are implemented and tested (~350 tests green). Run `cd engine && pytest -q`
+and `wbj full NVDA --offline`. History below is the original mid-plan note.
+
+---
+
 **Last session:** 2026-07-16 · **Branch:** `feature/wbj-engine` · **Status:** paused mid-plan (9.5 / 25 tasks)
 
 ## To resume (next Claude Code session)
